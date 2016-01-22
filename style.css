@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 98%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+body {
+  margin:0;
+  text-align: center;
+}
+.main-header{
+  padding: .5em 0px; /*remove top of page margin*/
+}
+/*--------- SHOWING CONTENT IN EQUAL COLUMNS --------*/
+@media (min-width:780px){
+  .col {
+    display: inline-block;
+    margin-right: -4px; /* give neg margin to pull inline elem closer to same line*/
+    vertical-align: top; /*to set vertical alignment of inline elem*/
+    width: 50%; /*set the width of each column to half*/
+  }
+}
+          /*SET GUTTERS*/
+.col p {padding-left: 1em; padding-right: 1em;}
+/*--------------------------------------------------*/
+
+
+/*-------------- STICKY FOOTER -------------*/
+@media (min-width: 769px) {
+  .wrap {
+    min-height: calc(100vh - 18px); /*remove scroll effect; stick to below wrap*/
+  }
+}
+footer{
+  background-color:rgb(44, 74, 181); /*blue footer background*/
+  color: white;
+  font-weight: bold;
+  padding: 0;
+}
+/*------------------------------------------*/
+
+/*----- TO SET NAV AND WEBSITE NAME ON SAME LINE ------*/
+header {
+  background-color: rgb(44, 74, 181); /*blue nav bar background*/
+}
+ul { /*position and layout of nav btn*/
+  max-width: 70%;
+  padding-bottom: 40px;
+  margin: auto;
+}
+ul li {
+  margin-left: -40px; /*centering nav btn*/
+}
+.name { margin-top:20px;}
+/*USE THIS IF DESIGN FOR DESKTOP*/
+@media (min-width:680px) { /*sets elems on same line when full-screen*/
+  ul {padding-bottom: 0px;/*remove blue bottom padding*/}
+  ul li {margin-left: 10px;} /*centering nav*/
+  .name,
+  .main-nav,
+  .main-nav li {
+    display: inline-block; /*placing all adjacent elems inline-block*/
+  }
+}
+.main-nav a { /*link styling*/
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+.main-nav a:hover {
+  color:#093a58;
+}
+.main-nav li  {
+  text-align: center;
+  background-color: #fff;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  list-style: none;
+  color: red;
+}
+/*-------------------------------------------*/
