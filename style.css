@@ -9,9 +9,17 @@
 body {
   margin:0;
   text-align: center;
+  background-color: #af223b;
 }
 .main-header{
   padding: .5em 0px; /*remove top of page margin*/
+}
+.feat-img {
+  width: 250px;
+  float: left; /*NOTE:float can also reverse order*/
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 /*--------- SHOWING CONTENT IN EQUAL COLUMNS --------*/
 @media (min-width:780px){
@@ -21,9 +29,27 @@ body {
     vertical-align: top; /*to set vertical alignment of inline elem*/
     width: 50%; /*set the width of each column to half*/
   }
+  .col-float {
+    float: left;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .right {
+    width: 50%;
+  }
+  .left {
+    width: 40%;
+  }
 }
           /*SET GUTTERS*/
 .col p {padding-left: 1em; padding-right: 1em;}
+
+.clearfix: :after { /*to fix colapsing margins when using float*/
+  content: "";
+  display: table;
+  clear: both;
+
+}
 /*--------------------------------------------------*/
 
 
