@@ -64,6 +64,9 @@
     #about {
       display: none;
     }
+    #aboutPic {
+
+    }
     #contact {
       display: none
     }
@@ -80,12 +83,44 @@
     .logo-wrapper {
       padding-top: 55px;
     }
+    /*-----------Transitions---------*/
+    .div img {
+      height: 50px;
+      padding: 5%;
+      -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+      transition: width 2s, height 2s, transform 2s;
+    }
+    .div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+        transition: width 2s, height 2s, transform 2s;
+    }
+    .div:hover img {
+        width: 200px;
+        height: 200px;
+        -webkit-transform: rotate(180deg); /* Safari */
+        transform: rotate(180deg);
+    }
+
+    .div:hover {
+        width: 300px;
+        height: 300px;
+        -webkit-transform: rotate(180deg); /* Safari */
+        transform: rotate(180deg);
+    }
+    /*-------------------------------*/
+
     .test-logo  {
         clear:both;
         background-color:rgba(0,0,0,0.6);
         border:7px solid rgba(255,255,255,0.6);
         width:200px;
         height:200px;
+        transition-timing-function: ease-in-out;
+        transition: width 2s;
+        transition: height 2s;
         border-radius:50%;
         font-size:2.5em;
         color:white;
@@ -224,7 +259,9 @@
 
       <div id="about"class="about-container">
         <h1 id="aboutHeader" style="color:white">About</h1>
-        <img id="aboutPic" style="color:white" src="http://lorempixel.com/400/200/business" alt="">
+        <div>
+          <img id="aboutPic" style="color:white" src="http://lorempixel.com/400/200/business/1" alt="">
+        </div>
 
         <p id="aboutText" style="color:white">
           It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
@@ -243,6 +280,10 @@
         <p id="contactPhone" style="color:white">
           (555) 555-5555
         </p>
+
+        <div class="div">
+          <img src="https://cdn3.iconfinder.com/data/icons/leaf/256/facebook.png" alt="" />
+        </div>
       </div>
 
     </div>
