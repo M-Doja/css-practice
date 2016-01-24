@@ -4,32 +4,162 @@
     <meta charset="utf-8">
     <title>Karen Markle Writting Services</title>
     <style media="screen">
+    body {
+      margin:0;
+      text-align: center;
+      background-color: #222; /*darkgrey*/
+    }
     .container {
       width: 98%;
       max-width: 1000px;
       margin: 0 auto;
+      margin-bottom: -18px;
     }
-    body {
-      margin:0;
-      text-align: center;
-      background-color: #af223b;
+    #hmHeader {
+      display: none;
     }
+    .home-container {
+      margin-bottom: 0;
+      padding-bottom:10px;
+    }
+    .main-foot {
+      background-color: rgb(19, 25, 105);
+      color: silver;
+      font-weight: bold;
+      padding:1px;
+    }
+    .wrap {
+      min-height: calc(100vh - 54px);
+      background-color: #444; /*lightgrey*/
+    }
+    .logo-wrapper {
+      padding-top: 55px;
+    }
+    .test-logo  {
+        clear:both;
+        background-color:rgba(0,0,0,0.6);
+        border:7px solid rgba(255,255,255,0.6);
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        font-size:2.5em;
+        color:white;
+        margin-top:-173px;
+        margin-bottom: 60px;
+    }
+    #service{
+      font-size: 20px;
+      font-family: AR Berkley;
+    }
+    .peanutbutter, .jelly {
+      display: none;
+      font-size: 1.3em;
+      font-family: AR Berkley;
+    }
+    #inthide {
+      font-size: 2.3em;
+    }
+    .enter, .namehide {
+      display: none;
+    }
+    /*.logo-wrapper{
+      display: none;
+    }*/
+    #enterBtn {
+      background-color:#222;
+      font-family: AR Berkley;
+      font-size: 1em;
+      margin-top:90px;
+      width:100%;
+      padding:5px;
+      margin-bottom:40px;
+    }
+    #enterBtn:hover {
+      background-color:#777;
+    }
+
+    /*DESKTOP VIEW*/
+  @media (min-width:950px) {
+    .test-logo:hover .namehide{
+      color:gold;
+      display: block;
+      font-size:1.3em;
+    }
+    .test-logo:hover .enter,
+    .test-logo:hover .peanutbutter,
+    .test-logo:hover .jelly {
+      color: white;
+      display: block;
+    }
+    .test-logo:hover #service,
+    .test-logo:hover #inthide{
+      display: none;
+    }
+    #enterBtn {
+      display: none;
+    }
+    /*#hmHeader{*/
+      display: block;
+    }
+    .wrap {
+      /*min-height: calc(100vh - 54px);*/
+    }
+  }
     </style>
   </head>
   <body>
 <div class="container">
   <div class="wrap">
-    <div class="test-logo container" style="clear:both;background-color:rgba(0,0,0,0.6);border:6px solid rgba(255,255,255,0.6);width:110px;height:110px;border-radius:50%;font-size:2.5em;color:white;margin-top:40px;">
-      <p style="margin-top:15px;"><b>
-        KM
-      </b></p>
-      <p style="font-size:12px;margin-top:-45px;">
-      Writting Services
-      </p>
+
+
+    <div  id="logo"class="logo-wrapper">
+
+      <div class="thick-band" style="max-width:1000px; height:125px;background-color:silver;margin-bottom:-10px;padding-top:10px;">
+        <div class="thin-band" style="max-width:1000px; height:75%;background-color:rgb(19, 25, 105);padding-top:20px;">
+        </div>
+      </div>
+
+      <div class="test-logo container" >
+        <p id="inthide" style="margin-top:35px;margin-bottom:-55px"><b>
+          KM
+        </b></p>
+        <p class="namehide"><b>
+          <div class="namehide"style="margin-left:-550px;margin-top:-13px;font-size:2.5em;">Karen</div> <div class="namehide" style="margin-left:245px;margin-top:-115px;font-size:2.5em;">Markle</div>
+        </b></p>
+        <p id='service'>
+        Writting Services
+        </p>
+        <div  class="enter" style="font-size:1.7em;margin-top:-135px;">
+          <a href="#" onclick="enter()"style='color:white;text-decoration:none;' >Enter</a>
+        </div>
+        <button style='' type="button" class=""id='enterBtn' name="button" onclick="enter()">Enter</button>
+        <div class='peanutbutter'style="margin-top:90px;margin-left:-170px;" >
+          Writting
+        </div>
+        <div class='jelly' style="margin-top:-60px;margin-left:130px;">
+           Services
+        </div>
+      </div> <!-- test-logo container end -->
+    </div> <!-- logo-wrapper end -->
+
+    <div class="content-container" style="background-color: #444;">
+      <div id='home'class="home-container">
+        <h3 id='hmHeader'>Welcome to the creative writting services by Karen Markle</h3>
+      </div>
     </div>
 
+  </div> <!-- wrap end -->
+  <div class="main-foot">
+    <footer><p>
+      &copy 2016 Karen Markle
+    </p></footer>
   </div>
-
-</div>
+</div> <!-- Container end -->
+<script type="text/javascript">
+    function enter() {
+      document.getElementById('hmHeader').style.display = "inline";
+      document.getElementById('logo').style.display = "none";
+    }
+</script>
   </body>
 </html>
