@@ -15,12 +15,37 @@
       margin: 0 auto;
       margin-bottom: -18px;
     }
+    .con-nav {
+      margin-top:-20px;
+      display: none;
+    }
+    #homeNav {
+      list-style: none;
+      margin-left: -20px;
+    }
+    #homeNav a {
+      /*display: none;*/
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      float: left;
+      padding: 4px;
+    }
     #hmHeader {
       display: none;
+      margin-bottom: 60px;
     }
     .home-container {
       margin-bottom: 0;
       padding-bottom:10px;
+      padding-top: 100px;
+    }
+    #home1, #home2 {
+      display: none;
+      width: 90%;
+      color: white;
+      padding-bottom:25px;
+      text-align: center;
     }
     .main-foot {
       background-color: rgb(19, 25, 105);
@@ -62,9 +87,7 @@
     .enter, .namehide {
       display: none;
     }
-    /*.logo-wrapper{
-      display: none;
-    }*/
+
     #enterBtn {
       background-color:#222;
       font-family: AR Berkley;
@@ -98,12 +121,21 @@
     #enterBtn {
       display: none;
     }
-    /*#hmHeader{*/
-      display: block;
+    #hmHeader{
+      padding-bottom: 60px;
     }
     .wrap {
       /*min-height: calc(100vh - 54px);*/
     }
+    #home1, #home2 {
+      margin-right: -6px;
+      width:45%;
+      padding:20px;
+    }
+    .con-nav {
+      display: block;
+    }
+
   }
     </style>
   </head>
@@ -143,9 +175,24 @@
     </div> <!-- logo-wrapper end -->
 
     <div class="content-container" style="background-color: #444;">
-      <div id='home'class="home-container">
-        <h3 id='hmHeader'>Welcome to the creative writting services by Karen Markle</h3>
+      <div id="nav1"class="con-nav">
+        <ul id='homeNav' >
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sample">Samples</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#land">Exit</a></li>
+        </ul>
       </div>
+      <div id='home'class="home-container">
+        <h2 id='hmHeader' style="color:white">Welcome to the creative writting services by Karen Markle</h2>
+      </div>
+      <p id="home1">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p id="home2">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </p>
     </div>
 
   </div> <!-- wrap end -->
@@ -159,6 +206,10 @@
     function enter() {
       document.getElementById('hmHeader').style.display = "inline";
       document.getElementById('logo').style.display = "none";
+      document.getElementById('home1').style.display = "inline-block";
+      document.getElementById('home2').style.display = "inline-block";
+      document.getElementById('nav1').style.display = "block";
+      // document.getElementById('homeNav').style.display = "inline-block";
     }
 </script>
   </body>
