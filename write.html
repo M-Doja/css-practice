@@ -15,6 +15,12 @@
       margin: 0 auto;
       margin-bottom: -18px;
     }
+    .clearfix: :after { /*to fix colapsing margins when using float*/
+      content: "";
+      display: table;
+      clear: both;
+
+    }
     .con-nav {
       margin-top:-20px;
       display: none;
@@ -40,12 +46,26 @@
       padding-bottom:10px;
       padding-top: 100px;
     }
-    #home1, #home2 {
+    #home1, #home2, #sample1, #sample2 {
       display: none;
       width: 90%;
       color: white;
       padding-bottom:25px;
       text-align: center;
+      vertical-align: top;
+    }
+    .sample-container {
+      padding-bottom: 20px;
+      display: none;
+    }
+    #sample p {
+      padding: 5px;
+    }
+    #about {
+      display: none;
+    }
+    #contact {
+      display: none
     }
     .main-foot {
       background-color: rgb(19, 25, 105);
@@ -127,21 +147,19 @@
     .wrap {
       /*min-height: calc(100vh - 54px);*/
     }
-    #home1, #home2 {
-      margin-right: -6px;
+    #home1, #home2, #sample1, #sample2 {
+      margin-right: -4px;
       width:45%;
       padding:20px;
     }
-    .con-nav {
-      display: block;
-    }
+
 
   }
     </style>
   </head>
   <body>
 <div class="container">
-  <div class="wrap">
+  <div class="wrap clearfix" id="body-wrapper">
 
 
     <div  id="logo"class="logo-wrapper">
@@ -176,16 +194,16 @@
 
     <div class="content-container" style="background-color: #444;">
       <div id="nav1"class="con-nav">
-        <ul id='homeNav' >
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sample">Samples</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#land">Exit</a></li>
+        <ul id='homeNav' style="padding-top:10px;">
+          <li><a onclick="enter()"href="#home">Home</a></li>
+          <li><a onclick="sample()"href="#sample">Samples</a></li>
+          <li><a onclick="about()"href="#about">About</a></li>
+          <li><a onclick="contact()"href="#contact">Contact</a></li>
+          <li><a href="#" value="Reload Page" onClick="window.location.reload()">Exit</a></li>
         </ul>
       </div>
+      <h2 id='hmHeader' style="color:white"><br>Welcome to the creative writting services by Karen Markle</h2>
       <div id='home'class="home-container">
-        <h2 id='hmHeader' style="color:white">Welcome to the creative writting services by Karen Markle</h2>
       </div>
       <p id="home1">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -193,6 +211,40 @@
       <p id="home2">
         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
       </p>
+      <div id="sample"class="sample-container">
+        <h1 id="sampHeader" style="color:white">Samples</h1>
+        <p id="sample1" style="color:white">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+        </p>
+        <p id="sample2" style="color:white">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+        </p>
+
+      </div>
+
+      <div id="about"class="about-container">
+        <h1 id="aboutHeader" style="color:white">About</h1>
+        <img id="aboutPic" style="color:white" src="http://lorempixel.com/400/200/business" alt="">
+
+        <p id="aboutText" style="color:white">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+        </p>
+      </div>
+
+      <div id="contact"class="contact-container">
+        <h1 id="contactHeader" style="color:white">Contact</h1>
+
+        <p id="contactName" style="color:white">
+          Karen Markle
+        </p>
+        <p id="contactEmail" style="color:white">
+          English@usa.com
+        </p>
+        <p id="contactPhone" style="color:white">
+          (555) 555-5555
+        </p>
+      </div>
+
     </div>
 
   </div> <!-- wrap end -->
@@ -203,13 +255,62 @@
   </div>
 </div> <!-- Container end -->
 <script type="text/javascript">
+    function land() {
+      document.getElementById('hmHeader').style.display = "none";
+      document.getElementById('logo').style.display = "inline";
+      document.getElementById('home1').style.display = "none";
+      document.getElementById('home2').style.display = "none";
+      document.getElementById('nav1').style.display = "none";
+      document.getElementById('sample').style.display = "none";
+      document.getElementById('about').style.display = "none";
+      document.getElementById('contact').style.display = "none";
+    }
     function enter() {
       document.getElementById('hmHeader').style.display = "inline";
       document.getElementById('logo').style.display = "none";
       document.getElementById('home1').style.display = "inline-block";
       document.getElementById('home2').style.display = "inline-block";
       document.getElementById('nav1').style.display = "block";
-      // document.getElementById('homeNav').style.display = "inline-block";
+      document.getElementById('sample').style.display = "none";
+      // document.getElementById('body-wrapper').style. = "";
+      document.getElementById('about').style.display = "none";
+      document.getElementById('contact').style.display = "none";
+    }
+    function sample() {
+      document.getElementById('nav1').style.display = "block";
+      document.getElementById('sample').style.display = "inline-block";
+      document.getElementById('sample1').style.display = "inline-block";
+      document.getElementById('sample2').style.display = "inline-block";
+      document.getElementById('home1').style.display = "none";
+      document.getElementById('home2').style.display = "none";
+      document.getElementById('home').style.display = "none";
+      document.getElementById('hmHeader').style.display = "none";
+      document.getElementById('about').style.display = "none";
+      document.getElementById('contact').style.display = "none";
+    }
+    function about() {
+      document.getElementById('nav1').style.display = "block";
+      document.getElementById('sample').style.display = "none";
+      document.getElementById('sample1').style.display = "inline-block";
+      document.getElementById('sample2').style.display = "inline-block";
+      document.getElementById('home1').style.display = "none";
+      document.getElementById('home2').style.display = "none";
+      document.getElementById('home').style.display = "none";
+      document.getElementById('hmHeader').style.display = "none";
+      document.getElementById('about').style.display = "inline-block";
+      document.getElementById('contact').style.display = "none";
+    }
+    function contact() {
+      document.getElementById('nav1').style.display = "block";
+      document.getElementById('sample').style.display = "none";
+      document.getElementById('sample1').style.display = "inline-block";
+      document.getElementById('sample2').style.display = "inline-block";
+      document.getElementById('home1').style.display = "none";
+      document.getElementById('home2').style.display = "none";
+      document.getElementById('home').style.display = "none";
+      document.getElementById('hmHeader').style.display = "none";
+      document.getElementById('about').style.display = "none";
+      document.getElementById('contact').style.display = "inline-block";
     }
 </script>
   </body>
