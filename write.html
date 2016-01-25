@@ -19,7 +19,6 @@
       content: "";
       display: table;
       clear: both;
-
     }
     .con-nav {
       margin-top:-20px;
@@ -30,7 +29,6 @@
       margin-left: -20px;
     }
     #homeNav a {
-      /*display: none;*/
       text-decoration: none;
       color: white;
       font-size: 20px;
@@ -103,7 +101,6 @@
         -webkit-transform: rotate(180deg); /* Safari */
         transform: rotate(180deg);
     }
-
     .div:hover {
         width: 300px;
         height: 300px;
@@ -142,7 +139,6 @@
     .enter, .namehide {
       display: none;
     }
-
     #enterBtn {
       background-color:#222;
       font-family: AR Berkley;
@@ -154,6 +150,10 @@
     }
     #enterBtn:hover {
       background-color:#777;
+    }
+    img {
+    max-width: 100%;
+    height: auto;
     }
 
     /*DESKTOP VIEW*/
@@ -179,16 +179,11 @@
     #hmHeader{
       padding-bottom: 60px;
     }
-    .wrap {
-      /*min-height: calc(100vh - 54px);*/
-    }
     #home1, #home2, #sample1, #sample2 {
       margin-right: -4px;
       width:45%;
       padding:20px;
     }
-
-
   }
     </style>
   </head>
@@ -260,7 +255,10 @@
       <div id="about"class="about-container">
         <h1 id="aboutHeader" style="color:white">About</h1>
         <div>
-          <img id="aboutPic" style="color:white" src="http://lorempixel.com/400/200/business/1" alt="">
+          <a target="_blank" href="http://lorempixel.com/600/400/business/">
+            <img id="aboutPic" style="color:white" src="http://lorempixel.com/400/200/business/" alt="">
+          </a>
+
         </div>
 
         <p id="aboutText" style="color:white">
@@ -313,7 +311,6 @@
       document.getElementById('home2').style.display = "inline-block";
       document.getElementById('nav1').style.display = "block";
       document.getElementById('sample').style.display = "none";
-      // document.getElementById('body-wrapper').style. = "";
       document.getElementById('about').style.display = "none";
       document.getElementById('contact').style.display = "none";
     }
@@ -332,8 +329,8 @@
     function about() {
       document.getElementById('nav1').style.display = "block";
       document.getElementById('sample').style.display = "none";
-      document.getElementById('sample1').style.display = "inline-block";
-      document.getElementById('sample2').style.display = "inline-block";
+      document.getElementById('sample1').style.display = "none";
+      document.getElementById('sample2').style.display = "none";
       document.getElementById('home1').style.display = "none";
       document.getElementById('home2').style.display = "none";
       document.getElementById('home').style.display = "none";
@@ -344,8 +341,8 @@
     function contact() {
       document.getElementById('nav1').style.display = "block";
       document.getElementById('sample').style.display = "none";
-      document.getElementById('sample1').style.display = "inline-block";
-      document.getElementById('sample2').style.display = "inline-block";
+      document.getElementById('sample1').style.display = "none";
+      document.getElementById('sample2').style.display = "none";
       document.getElementById('home1').style.display = "none";
       document.getElementById('home2').style.display = "none";
       document.getElementById('home').style.display = "none";
