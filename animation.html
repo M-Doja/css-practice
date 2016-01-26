@@ -50,12 +50,31 @@
       /*animation-direction: reverse;*/
     }
 
+      /*TRANSFORM - spin*/
+      .div6:hover {-webkit-transform: rotate(540deg); /* Safari */transform: rotate(720deg);}
+      .div6 {width:50px;height:50px;background-color:lightblue;margin:5px;
+      -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+      transition: width 2s, height 2s, transform 2s;}
 
-      .div6 {width:50px;height:50px;background-color: lightblue;margin:5px;}
-      .div7 {width:50px;height:50px;background-color: lightblue;margin:5px;}
-      .div8 {width:50px;height:50px;background-color: lightblue;margin:5px;}
-      .div9 {width:50px;height:50px;background-color: lightblue;margin:5px;}
-      .div10 {width:50px;height:50px;background-color: lightblue;margin:5px;}
+        /*TRANSITION - grow*/
+      .div7:hover {width:350px;height:350px;background-color: lightblue;margin:5px;-webkit-transition: width 2s, height 2s; /* Safari */
+      transition: width 2s, height 2s; }
+      .div7 {width:50px;height:50px;background-color: lightblue;margin:5px;-webkit-transition: width 2s, height 2s; /* Safari */
+      transition: width 2s, height 2s; }
+
+      @keyframes div8 {0% {background-color: red;}20% {background-color: yellow;}
+      40% {background-color: blue;}60% {background-color: purple;}80% {background-color: lightblue;}100% {background-color: green;}}
+      .div8 {width:50px;height:50px;background-color: lightblue;margin:5px;animation-name: div8;animation-duration: 10s;animation-delay: 2s;animation-iteration-count: 3;}
+
+      .div9:hover {width:50px;height:50px;background-color: lightblue;margin:5px;-webkit-transform: rotate(720deg); transform: rotate(720deg);transition-duration: 10s}
+      .div9 {width:50px;height:50px;background-color: lightblue;margin:5px;-webkit-transform: 3s; transform:3s;}
+
+      /*TRANSFORM IMAGE INSIDE DIV*/
+      .div10 img:hover {-webkit-transform: rotate(720deg); transform: rotate(720deg);}
+      .div10 img {-webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+      transition: width 2s, height 2s, transform 2s;}
+      .div10 {width:50px;height:50px;background-color: lightblue;margin:5px;-webkit-transform 2s; transform: 2s;}
+
 
       /*ANIMATION OF DIV 10*/
       #myContainer {width: 400px;height: 400px;position: relative;background: yellow;}
@@ -79,7 +98,7 @@
             <div class="div7">div7</div>
             <div class="div8">div8</div>
             <div class="div9">div9</div>
-            <div class="div10"></div><hr>
+            <div class="div10"><img src="git.svg" alt="github icon" width='35'style="margin-top:7px;margin-left:7px;" /></div><hr>
             <p>
               <button onclick="myMove()">Click Me</button>
             </p>

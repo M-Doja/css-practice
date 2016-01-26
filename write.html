@@ -35,6 +35,10 @@
       float: left;
       padding: 4px;
     }
+    #homeNav a:hover {
+      font-size: 28px;
+      color: gold;
+    }
     #hmHeader {
       display: none;
       margin-bottom: 60px;
@@ -96,10 +100,10 @@
         transition: width 2s, height 2s, transform 2s;
     }
     .div:hover img {
-        width: 200px;
-        height: 200px;
-        -webkit-transform: rotate(180deg); /* Safari */
-        transform: rotate(180deg);
+        /*width: 200px;*/
+        /*height: 200px;*/
+        -webkit-transform: rotate(540deg); /* Safari */
+        transform: rotate(540deg);
     }
     .div:hover {
         width: 300px;
@@ -147,10 +151,18 @@
       width:100%;
       padding:5px;
       margin-bottom:40px;
+      border-radius: 10px;
     }
     #enterBtn:hover {
       background-color:#777;
     }
+    .button span {cursor: pointer;display: inline-block;position: relative;transition: 0.5s;}
+    .button span:after {content: ' »';position: absolute;opacity: 0;font-family: sans-serif;top: 0;right: -20px;
+    transition: 0.5s;}
+    .button:hover span {padding-right: 25px;}
+    .button:hover span:after {opacity: 1;right: 0;}
+    .button2d:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);}
     img {
     max-width: 100%;
     height: auto;
@@ -212,7 +224,7 @@
         <div  class="enter" style="font-size:1.7em;margin-top:-135px;">
           <a href="#" onclick="enter()"style='color:white;text-decoration:none;' >Enter</a>
         </div>
-        <button style='' type="button" class=""id='enterBtn' name="button" onclick="enter()">Enter</button>
+        <button style='' type="button" class="button button2d" style="vertical-align:middle"id='enterBtn' name="button" onclick="enter()"><span>Enter</span></button>
         <div class='peanutbutter'style="margin-top:90px;margin-left:-170px;" >
           Writting
         </div>
