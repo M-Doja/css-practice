@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3D Transformations</title>
+    <style>
+      div{text-align:center; font-size:300%; font-family:monospace; position:absolute;
+      top:200px;left:300px;width:200px;height:150px;background-color:red; border:1px solid black;transition: transform 1s;}
+
+      div#div2{position:absolute; font-size:100%; background-color:green; top:150;
+      left:-1px; /* Fix the border offset */
+    transform: rotate3d(1, 1, 1, 45deg) translate3d(10px, 60px, 100px);/* TIP - use -1 to invert a transform on any axis */ -webkit-animation-fill-mode: forwards; animation-fill-mode:forwards;}
+
+    div:hover #div2{
+      transform: translateZ(1000px);
+      animation: zipper 5s;
+      -webkit-animation: zipper 5s;
+    }
+
+    @keyframes zipper{
+      50%{transform:rotateX(90deg) rotateY(0deg);}
+      100%{transform:translateZ(-1000px);}
+    }
+    @-webkit-keyframes zipper{
+      50%{transform:rotateX(90deg) rotateY(0deg);}
+      100%{transform:translateZ(-1000px);}
+    }
+    </style>
+  </head>
+  <body>
+    <div> Div 1
+      <div id="div2">Div 2</div>
+    </div>
+  </body>
+</html>

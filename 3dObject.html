@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3d Object</title>
+    <style>
+      #cube .front{transform: translateZ( 100px );background:hsla(300, 100%, 50%, 0.7);}
+      #cube .back{transform: rotateX( -180deg ) translateZ( 100px );background:hsla(240, 100%, 50%, 0.7);}
+      #cube .right{transform: rotateY( 90deg ) translateZ( 100px );background:hsla(180, 100%, 50%, 0.7);}
+      #cube .left{transform: rotateY( -90deg ) translateZ( 100px );background:hsla(120, 100%, 50%, 0.7);}
+      #cube .top{transform: rotateX( 90deg ) translateZ( 100px );background:hsla(60, 100%, 50%, 0.7);}
+      #cube .bottom{transform: rotateX( -90deg ) translateZ( 100px );background:hsla(0, 100%, 50%, 0.7);}
+    .container{width:200px; height:200px; position:relative; margin:0 auto 40px; border: 1px solid #fff; perspective:1000px; /* A distant vanishing point */ perspective-origin:50% 100%; /* Auto-offset perspective for child cube */}
+      #cube{width: 100%; height:100%; top:100px; position:absolute; transform-style:preserve-3d;transition:transform 5s;}
+      #cube:hover {transform:rotateX(360deg) rotateY(50deg);}
+      #cube div{display:block; position:absolute; width:200px; height:200px; border:2px solid black; margin:0 auto; }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div id="cube">
+        <div class="front">1<p style="text-align:center;margin-top:55px;font-size:1.3em;"><a href="#">Enter</a></p></div>
+        <div class="back">2<p style="text-align:center;margin-top:55px;font-size:1.3em;"><a href="#">Backside</a></p></div>
+        <div class="right">3<p style="text-align:center;margin-top:55px;font-size:1.3em;"><a href="#">Rightside</a></p></div>
+        <div class="left">4<p style="text-align:center;margin-top:55px;font-size:1.3em;"><a href="#">Leftside</a></p></div>
+        <div class="top">5<p style="text-align:center;margin-top:55px;font-size:1.3em;"><a href="#">Top</a></p></div>
+        <div class="bottom">6<p style="text-align:center;margin-top:55px;font-size:1.3em;"><a href="#">Bottom</a></p></div>
+      </div>
+    </section>
+
+  </body>
+</html>

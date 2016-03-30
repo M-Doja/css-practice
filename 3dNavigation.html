@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3d Navigation</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap_theme.min.css">
+    <style>
+    var img = $(document.createElement("img"));
+    $(img).attr({
+      "src": this url,
+      "data-index": count,
+      "title": this.title,
+      "alt": this.description
+    });
+    .container{display:inline; transform:rotateY(0deg); perspective:500px; margin:2em;}
+
+    .container:hover .card,
+    .container .hover .card{transform:rotateY(180deg);}
+
+    .container, .front, .back{width:300px; height:500px;}
+
+    .front, .back{backface-visibility:hidden; position:absolute; top:0; left:0; }
+    .front, .back{box-sizing:border-box;}
+
+    .card{position:relative; display:block; transition:1.5s; transform-style:preserve-3d;}
+
+    .front{z-index:2; transform: rotateY(0deg); background-size: cover;}
+
+    .front h3{background:rgba(0, 0, 0, 0.5); color:#fff; text-align:center; padding:.5em;}
+
+    .back{padding:1em; transform:rotateY(180deg); background:#eee;}
+    nav{display:block; padding:.5em; margin:0;}
+    nav a{display:block; list-style:none; background:#aaa; color:#fff; font-size:1.5em; margin-top:.5em; padding:.5em; text-align: center}
+    nav a:hover{background: #333;}
+    .last{margin-top: -500px;margin-right: 10px;}
+    .col-md-12{padding-left: 0px;padding-right: 20px}
+    </style>
+    <script>
+      window.addEventListener("load", function(){
+        var containers = document.querySelectorAll(".container");
+        for(var i=0; i<containers.length; i++){
+          containers[i].addEventListener("touchstart", function(){
+            this.classList.toggle("hover");
+          });
+        }
+      });
+    </script>
+  </head>
+  <body style="padding:40px;">
+    <div class="col-md-12" style="padding-bottom:60px">
+      <h1 class="text-center">Categories</h1><br><br>
+      <div class="container" style="margin-left:0px;margin-bottom:-500px;">
+        <div class="card">
+          <div class="front" style="background-image:url('http://thehalfwall.com/blog/wp-content/uploads/2015/08/hamburger_love-normal.jpg');">
+            <h3>Burger</h3>
+          </div>
+          <div class="back">
+            <h3>A Tasty Burger</h3>
+            <p>This is a tasty burger served with cheese, tomatoe, and lettuce.</p>
+            <nav>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" >
+        <div class="card">
+          <div class="front" style="background-image:url('http://bboceansuites.com/wp-content/uploads/2015/05/sunset-beach-chairs-stock-footage.jpg');">
+            <h3>Beach</h3>
+          </div>
+          <div class="back">
+            <h3>A Seaside View</h3>
+            <p>This is a photo of the ocean along the beach.</p>
+            <nav>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="container last">
+        <div class="card">
+          <div class="front" style="background-image:url('http://www.friendsoftheriver.org/wp-content/uploads/2016/01/American-River-Threat.jpg');">
+            <h3>Rafting</h3>
+          </div>
+          <div class="back">
+            <h3>Adventures Galore</h3>
+            <p>This is a view of your next exciting vaction.</p>
+            <nav>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
